@@ -11,7 +11,7 @@ class ChartCubit extends Cubit<ChartState> {
   final ChartRepository _chartRepository;
 
   ChartCubit(this._chartRepository) : super(ChartsInitialState()) {
-   // getData();
+    getData();
   }
 
   Future<void> getData() async {
