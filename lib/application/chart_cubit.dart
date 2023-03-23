@@ -10,18 +10,26 @@ part 'chart_state.dart';
 class ChartCubit extends Cubit<ChartState> {
   final ChartRepository _chartRepository;
 
-  ChartCubit(this._chartRepository) : super(ChartsInitialState()) {
-    getData();
-  }
+  ChartCubit(this._chartRepository)
+      : super(
+          ChartsInitialState(),
+        );
 
   Future<void> getData() async {
     emit(ChartsLoadingState());
     final Either<List<ChartEntry>, ChartError> result =
         await _chartRepository.getChartData();
-    return result.fold((entries) {
-      emit(ChartsLoadedState(entries: entries));
-    }, (error) {
-      emit(ChartsErrorState(error: error));
-    });
+    return result.fold(
+      (entries) {
+        emit(
+          ChartsLoadedState(entries: entries),
+        );
+      },
+      (error) {
+        emit(
+          ChartsErrorState(error: error),
+        );
+      },
+    );
   }
 }

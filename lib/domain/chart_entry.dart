@@ -1,8 +1,6 @@
-
 import 'package:equatable/equatable.dart';
 
 class ChartEntry extends Equatable {
-
   const ChartEntry({
     required this.date,
     required this.value,

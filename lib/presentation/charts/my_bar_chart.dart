@@ -15,8 +15,8 @@ class MyBarChart extends StatelessWidget {
   }) : super(key: key);
 
   List<BarChartGroupData> _getBarGroups(List<ChartEntry> entries) {
-
-    List<BarChartGroupData> groupList = List<BarChartGroupData>.empty(growable: true);
+    List<BarChartGroupData> groupList =
+        List<BarChartGroupData>.empty(growable: true);
 
     for (int i = 0; i < entries.length; i++) {
       final entry = entries[i];
@@ -78,8 +78,7 @@ class MyBarChart extends StatelessWidget {
               getTitlesWidget: (value, meta) {
                 final index = value.toInt();
                 final date = entries[index].date;
-                final String formattedDate =
-                    DateFormat('yMd').format(date);
+                final String formattedDate = DateFormat('yMd').format(date);
                 return Text(formattedDate);
               },
               showTitles: true,

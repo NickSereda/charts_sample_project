@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ChartCubit>(
-      create: (context) => ChartCubit(getIt.get<ChartRepository>()),
+      create: (context) => ChartCubit(getIt.get<ChartRepository>())..getData(),
       child: const MaterialApp(
         home: MainScreen(),
       ),

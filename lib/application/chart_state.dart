@@ -13,16 +13,23 @@ class ChartsLoadingState extends ChartState {
 }
 
 class ChartsLoadedState extends ChartState {
-  ChartsLoadedState({required this.entries});
+  ChartsLoadedState({
+    required this.entries,
+  });
 
   final List<ChartEntry> entries;
+
   @override
   List<Object?> get props => [entries];
 }
 
 class ChartsErrorState extends ChartState {
-  ChartsErrorState({required this.error});
+  ChartsErrorState({
+    required this.error,
+  });
+
   final ChartError error;
+
   @override
   List<Object?> get props => [error];
 }

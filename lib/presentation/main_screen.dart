@@ -1,5 +1,4 @@
 import 'package:charts_sample_project/application/chart_cubit.dart';
-import 'package:charts_sample_project/presentation/charts/my_bar_chart.dart';
 import 'package:charts_sample_project/presentation/charts/my_line_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
