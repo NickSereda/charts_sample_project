@@ -31,19 +31,22 @@ void main() {
     await getIt.reset();
   });
 
-  group('Charts error cubit test', () {
-    blocTest<ChartCubit, ChartState>(
-      'ChartCubit emits loading state and loaded state when getData() is called',
-      build: _setUpDependencies,
-      act: (bloc) async {
-        await bloc.getData();
-      },
-      expect: () => [
-        ChartsLoadingState(),
-        ChartsErrorState(
-          error: const ChartDataEmpty("chart data empty"),
-        ),
-      ],
-    );
-  });
+  group(
+    'Charts error cubit test',
+    () {
+      blocTest<ChartCubit, ChartState>(
+        'ChartCubit emits loading state and loaded state when getData() is called',
+        build: _setUpDependencies,
+        act: (bloc) async {
+          await bloc.getData();
+        },
+        expect: () => [
+          ChartsLoadingState(),
+          ChartsErrorState(
+            error: const ChartDataEmpty("chart data empty"),
+          ),
+        ],
+      );
+    },
+  );
 }

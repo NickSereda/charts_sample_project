@@ -44,7 +44,6 @@ void main() {
   });
 
   group('Charts cubit test', () {
-    // Can not test initial state, since we call getChartData() in constructor.
     test('initial state is ChartsInitialState', () {
       final cubit = _setUpDependencies();
       expect(cubit.state, ChartsInitialState());
